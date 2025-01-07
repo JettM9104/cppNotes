@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "auton",
+  "steps": [
+    {
+      "file": "main.cpp",
+      "description": "so uhh this is code\n",
+      "line": 2
+    }
+  ]
+}
