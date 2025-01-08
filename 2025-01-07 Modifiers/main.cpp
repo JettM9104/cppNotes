@@ -19,6 +19,10 @@ public:
   int method3(int g) noexcept { // cannot throw an exception
     return g * g * g;
   }
+
+  int method4(int s) const { // This functino cannot be changed
+    return g * g * g * g;
+  }
   base(int a); // You have to declare the constructor if you want to write it outside the class
 
   base (double a) { // constructor
