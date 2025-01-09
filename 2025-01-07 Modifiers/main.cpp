@@ -23,6 +23,10 @@ public:
   int method4(int s) const { // This functino cannot be changed
     return g * g * g * g;
   }
+
+  constexpr int method5(int d) { // This function will evaluate this during compile time but there are limitations
+    return g * 9;
+  }
   base(int a); // You have to declare the constructor if you want to write it outside the class
 
   base (double a) { // constructor
