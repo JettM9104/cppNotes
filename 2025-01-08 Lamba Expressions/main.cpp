@@ -8,7 +8,9 @@ using namespace std;
 
 
 int main() {
-  auto add = [](int a, int b) -> int {
+  auto add = [](int a, int b) -> int { // -> specifies return type, [] denots start of expressino, () is parameter list
     return a + b;
   };
+
+  cout << add(20, 30); // use lambda expressinos
 }
