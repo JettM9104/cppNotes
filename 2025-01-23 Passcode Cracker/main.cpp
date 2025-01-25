@@ -8,11 +8,13 @@ bool attemptPassword(const string& attempt, const string& target) {
     return attempt == target;
 }
 
+unsigned long long int x = 0;
+
 void bruteForcePassword(const string& target) {
     clock_t startTime = clock();
 
-    const char startChar = 32; // ASCII space
-    const char endChar = 126; // ASCII tilde (~)
+    const char startChar = 48; // ASCII space
+    const char endChar = 57; // ASCII tilde (~)
 
     string attempt = "";
     size_t currentLength = 1;
@@ -28,6 +30,7 @@ void bruteForcePassword(const string& target) {
                 attempt[i] = startChar + ((index / (int)pow(endChar - startChar + 1, i)) % (endChar - startChar + 1));
 
                 cout << "Attempt: " << attempt << "\n";
+                x++;
             }
 
             // Check if the attempt matches the password
@@ -35,6 +38,7 @@ void bruteForcePassword(const string& target) {
                 clock_t endTime = clock();
                 cout << "Password found: " << attempt << endl;
                 cout << "Time taken: " << ((double)(endTime - startTime) / CLOCKS_PER_SEC) << " seconds" << endl;
+                cout << "Total Attempts:" << x << endl;
                 return;
             }
         }
@@ -45,7 +49,11 @@ void bruteForcePassword(const string& target) {
 }
 
 int main() {
-    string targetPassword = " "; // Change this to the password you want to test
+    string targetPassword;
+
+    cin >> targetPassword;
+
+    
     cout << "Attempting to brute-force password: " << targetPassword << endl;
 
     bruteForcePassword(targetPassword);
