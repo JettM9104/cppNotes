@@ -19,18 +19,18 @@ bool isPrime(int x) {
 
 
 
+
 vector<int> d = {};
-// how many primes do you think it got?
-// leave your guess in the comments below!
+
 
 int main() {
   unsigned long long int i = 0;
+  unsigned long long int j = 0;
   unsigned long long int n = 0;
+  unsigned long long int m = 0;
 
-  // Open the file for writing
   ofstream outfile("primes.txt");
 
-  // Check if the file opened successfully
   if (!outfile.is_open()) {
     cerr << "Error opening file!" << endl;
     return 1;
@@ -40,13 +40,15 @@ int main() {
     i++;
     if (isPrime(i)) {
       d.push_back(i);
-      // Write to the file instead of the console
-      outfile << n << "th iteration has value " << i << "\n";
+
+      outfile << n << "th iteration has value " << i << " (+" << i-j << ") with biggest increase " << m << "\n";
       n++;
+      m = (i-j) > m ? i-j : m;
+
+      j = i;
     }
   } while (true);
 
-  // Close the file
   outfile.close();
 
   return 0;
