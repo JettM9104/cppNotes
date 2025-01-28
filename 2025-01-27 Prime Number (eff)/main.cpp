@@ -41,7 +41,7 @@ int main() {
     if (isPrime(i)) {
       d.push_back(i);
       // Write to the file instead of the console
-      outfile << n << ". \t\t\t" << i << "\n";
+      outfile << n << "th iteration has value " << i << "\n";
       n++;
     }
   } while (true);
