@@ -13,8 +13,8 @@ unsigned long long int x = 0;
 void bruteForcePassword(const string& target) {
     clock_t startTime = clock();
 
-    const char startChar = 48; // ASCII space
-    const char endChar = 57; // ASCII tilde (~)
+    const char startChar = 48; // ASCII 0
+    const char endChar = 57; // ASCII 9
 
     string attempt = "";
     size_t currentLength = 1;
