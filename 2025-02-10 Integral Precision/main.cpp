@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 
+
 using namespace std;
 
 double upperbound = 0;    // Upper bound of the integration
